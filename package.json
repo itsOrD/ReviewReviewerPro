@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node /server/server.js && npm:build-react",
-    "build-react": "client/npm:build"
+    "start": "node ./server/server.js"
   },
   "keywords": [],
   "author": "",

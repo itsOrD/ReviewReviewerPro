@@ -16,6 +16,10 @@ app.use(express.json());
 
 app.use(express.static("../client/build"));
 
+app.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 // routes
 app.get("/", (req, res) => {
   res.send("Hello from MERN");
@@ -45,8 +49,4 @@ app.post("/savemetareview", (req, res) => {
 // Bootstrap server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}.`);
-});
-
-app.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
